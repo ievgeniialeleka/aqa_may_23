@@ -1,0 +1,133 @@
+
+//        //Task1
+//        double cm = 10;
+//        double inch = 25;
+//        double diff = 2.54;
+//        double cmToInch = cm * diff;
+//        double inchToCm = inch / diff;
+//        System.out.println(cm + " centimeters equals " + cmToInch + " inches");
+//        System.out.println(inch + " inches equals " + inchToCm + " centimeters");
+//        System.out.println();
+
+//        //Task2
+//        double vasya = 5000;
+//        double parents = 5000;
+//        int rateEurotoHryvnya = 28;
+//        double vacationBudgetInEuros = (vasya + parents) / rateEurotoHryvnya;
+//        System.out.println(vacationBudgetInEuros + " Euro");
+//        System.out.println();
+
+//        //Task 3
+//        int d = 0;
+//        int ed = 0;
+//        Scanner sc = new Scanner(System.in);
+//        System.out.println("Enter a number for task 3: ");
+//        if(sc.hasNextInt()) {
+//            int x = sc.nextInt();
+//            if (x > 9 && x < 100) {
+//                d = x / 10;
+//                ed = x % 10;
+//                System.out.println(d + " " + ed);
+//            } else {
+//                System.out.println("The number you entered is not a positive 2 digit number");
+//            }
+//        } else {
+//            System.out.println("You entered invalid number");
+//        }
+
+//        //Task4
+//        Scanner sc = new Scanner(System.in);
+//        System.out.println("Enter a number for task 4: ");
+//        if(sc.hasNextInt()) {
+//            int x = sc.nextInt();
+//            if (x > 9 && x < 100) {
+//                int d = x / 10 * 10;
+//                int ed = x % 10;
+//                System.out.println(d + " " + ed);
+//            } else {
+//                System.out.println("The number you entered is not a positive 2 digit number");
+//            }
+//        } else {
+//            System.out.println("You entered invalid number");
+//        }
+
+//        //Task 5
+//        int weight = 0;
+//        Scanner sc = new Scanner(System.in);
+//        System.out.println("Enter a number for task 5: ");
+//        if(sc.hasNextInt()) {
+//            int x = sc.nextInt();
+//            if (x > 9 && x < 100) {
+//                int d = x / 10;
+//                int ed = x % 10;
+//                weight = d + ed;
+//                System.out.println(weight);
+//            } else {
+//                System.out.println("The number you entered is not a positive 2 digit number");
+//            }
+//        } else {
+//            System.out.println("You entered invalid number");
+//        }
+//        System.out.println();
+
+
+//        //Task6
+//        Scanner sc3 = new Scanner(System.in);
+//        System.out.println("Enter a number for task 6: ");
+//        if(sc3.hasNextInt()) {
+//            int x = sc3.nextInt();
+//            if (x > 0) {
+//                System.out.println("The number is positive");
+//            } else if (x < 0) {
+//                System.out.println("The number is negative");
+//            } else {
+//                System.out.println("The number is 0");
+//            }
+//        } else {
+//            System.out.println("You entered invalid number");
+//        }
+//        System.out.println();
+
+
+//        //Task7
+//        Scanner sc4 = new Scanner(System.in);
+//        System.out.println("Enter a number for task 7: ");
+//        if(sc4.hasNextInt()) {
+//            int x = sc4.nextInt();
+//            // так как x >= 100 проверяет оба условия: как минимум трехзначное и положительное, я не добавляла других
+//            if (x >= 100) {
+//                --x;
+//                // в данном случае так тоже можно
+//                // x--;
+//                System.out.println(x);
+//            } else {
+//                System.out.println("The number you entered is not a positive 3 digit number");
+//            }
+//        } else {
+//            System.out.println("You entered invalid number");
+//        }
+//        System.out.println();
+
+//        //Task8
+//        Scanner sc5 = new Scanner(System.in);
+//        System.out.println("Enter a number for task 8: ");
+//        if(sc5.hasNextInt()) {
+//            int x = sc5.nextInt();
+//            if (x > 9 && x < 100) {
+//                int d = x / 10;
+//                int ed = x % 10;
+//                int product = d * ed;
+//                if (product > x) {
+//                    System.out.println(product + " is bigger than " + x);
+//                } else if (product < x) {
+//                    System.out.println(x + " is bigger than " + product);
+//                } else if (product == x) {
+//                    System.out.println(product + " and " + x + " are equal");
+//                }
+//            } else {
+//                System.out.println("The number you entered is not a positive 2 digit number");
+//            }
+//        } else {
+//            System.out.println("You entered invalid number");
+//        }
+//        System.out.println();
