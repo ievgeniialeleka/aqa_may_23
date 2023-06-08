@@ -69,11 +69,8 @@ public class Main {
         int sum1 = 0;
         int sum2 = 0;
 
-        for (int i = 0; i < randomArr1.length; i++) {
+        for (int i = 0; i < 5; i++) {
             sum1 += randomArr1[i];
-        }
-
-        for (int i = 0; i < randomArr2.length; i++) {
             sum2 += randomArr2[i];
         }
 
