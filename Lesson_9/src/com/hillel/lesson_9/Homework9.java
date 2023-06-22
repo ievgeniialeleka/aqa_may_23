@@ -50,12 +50,15 @@ public class Homework9 {
         for (int i = 0; i < sArr.length; i++) {
             char[] arrchar = sArr[i].toCharArray();
             for (int j = 0; j < arrchar.length - 1; j++) {
-                if(arrchar[j] == arrchar[j+1]) {
+                count = 1;
+                for (int k = 1; k < arrchar.length; k++) {
+                if(arrchar[j] == arrchar[k]) {
                     count++;
                     if(count > max) {
                         max = count;
                         result = sArr[i];
                     }
+                }
                 }
             }
         } return result;
