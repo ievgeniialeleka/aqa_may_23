@@ -49,7 +49,7 @@ public class Homework9 {
         String result = null;
         for (int i = 0; i < sArr.length; i++) {
             char[] arrchar = sArr[i].toCharArray();
-            for (int j = 0; j < arrchar.length - 1; j++) {
+            for (int j = 0; j < arrchar.length; j++) {
                 count = 1;
                 for (int k = 1; k < arrchar.length; k++) {
                 if(arrchar[j] == arrchar[k]) {
