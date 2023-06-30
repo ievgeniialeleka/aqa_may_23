@@ -1,13 +1,13 @@
 package com.hillel.lesson_10.inheritance;
 
 public abstract class Vehicle {
-    int speed;
+    private int speed;
 
-    double weight;
+    private double weight;
 
-    String color;
+    private String color;
 
-    double price;
+    private double price;
 
    public Vehicle() {}
 
