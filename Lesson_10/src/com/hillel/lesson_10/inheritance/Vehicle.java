@@ -9,13 +9,14 @@ public abstract class Vehicle {
 
     private double price;
 
-   public Vehicle() {}
+    public Vehicle() {
+    }
 
     public Vehicle(int speed, double weight, String color, double price) {
-       this.speed = speed;
-       this.weight = weight;
-       this.color = color;
-       this.price = price;
+        this.speed = speed;
+        this.weight = weight;
+        this.color = color;
+        this.price = price;
     }
 
     public Vehicle(int speed, double weight, String color) {
@@ -34,7 +35,7 @@ public abstract class Vehicle {
     }
 
     public double getMilesPerGallon(int gallon, int miles) {
-       return miles/gallon;
+        return miles / gallon;
     }
 
     public int getSpeed() {
@@ -69,10 +70,12 @@ public abstract class Vehicle {
         this.price = price;
     }
 
+    public abstract void gas();
+
+    public abstract void brake();
+
     @Override
     public String toString() {
-       return "Speed: " + speed + ", Weight: " + weight + ", Color: " + color + ", Price: " + price;
+        return "Speed: " + speed + ", Weight: " + weight + ", Color: " + color + ", Price: " + price;
     }
-
-
 }

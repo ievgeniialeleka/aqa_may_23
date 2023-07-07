@@ -10,6 +10,16 @@ public class Truck extends Vehicle {
         super();
     }
 
+    @Override
+    public void gas() {
+        System.out.println("Truck is picking up the speed");
+    }
+
+    @Override
+    public void brake() {
+        System.out.println("Truck is slowing down");
+    }
+
     public Truck(int speed, double weight, String color, double price, int maxload, int trunkvolume) {
         super(speed, weight, color, price);
         this.maxload = maxload;

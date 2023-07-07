@@ -14,6 +14,16 @@ public class Car extends Vehicle {
         super();
     }
 
+    @Override
+    public void gas() {
+        System.out.println("Car is picking up the speed");
+    }
+
+    @Override
+    public void brake() {
+        System.out.println("Car is slowing down");
+    }
+
     public Car(int speed, double weight, String color, double price, String make, String model, int horsepower, String bodytype) {
         super(speed, weight, color, price);
         this.make = make;
