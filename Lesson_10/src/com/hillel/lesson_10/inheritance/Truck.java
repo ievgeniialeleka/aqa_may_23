@@ -11,13 +11,18 @@ public class Truck extends Vehicle {
     }
 
     @Override
-    public void gas() {
-        System.out.println("Truck is picking up the speed");
+    public String gas() {
+        return "Truck is picking up the speed";
     }
 
     @Override
-    public void brake() {
-        System.out.println("Truck is slowing down");
+    public String brake() {
+        return "Truck is slowing down";
+    }
+
+    @Override
+    public String stop() {
+        return "Truck has come to a complete stop";
     }
 
     public Truck(int speed, double weight, String color, double price, int maxload, int trunkvolume) {

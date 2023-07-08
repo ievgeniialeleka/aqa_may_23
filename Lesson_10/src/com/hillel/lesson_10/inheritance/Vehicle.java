@@ -70,9 +70,26 @@ public abstract class Vehicle {
         this.price = price;
     }
 
-    public abstract void gas();
+    public abstract String gas();
 
-    public abstract void brake();
+    public abstract String brake();
+
+    public abstract String stop();
+
+    public String roadBehavior(TrafficLight trafficlight) {
+        String result = null;
+        switch(trafficlight) {
+            case RED:
+                result =  stop();
+                break;
+            case YELLOW:
+                result = brake();
+                break;
+            case GREEN:
+                result = gas();
+                break;
+        } return result;
+    }
 
     @Override
     public String toString() {

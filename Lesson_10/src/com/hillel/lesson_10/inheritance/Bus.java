@@ -9,13 +9,18 @@ public class Bus extends Vehicle {
     }
 
     @Override
-    public void gas() {
-        System.out.println("Bus is picking up the speed");
+    public String gas() {
+        return "Bus is picking up the speed";
     }
 
     @Override
-    public void brake() {
-        System.out.println("Bus is slowing down");
+    public String brake() {
+       return "Bus is slowing down";
+    }
+
+    @Override
+    public String stop() {
+        return "Bus has come to a complete stop";
     }
 
     public Bus(int speed, double weight, String color, int passengers) {
@@ -44,10 +49,10 @@ public class Bus extends Vehicle {
         if (ob == null || !(ob instanceof Bus))
             return false;
 
-        Vehicle otherBus = (Bus) ob;
+        Bus otherBus = (Bus) ob;
         if (this.getSpeed() != otherBus.getSpeed()) return false;
         if (this.getWeight() != otherBus.getWeight()) return false;
-        if (this.passengers != ((Bus) otherBus).passengers) return false;
+        if (this.passengers != otherBus.passengers) return false;
         if (!this.getColor().equals(otherBus.getColor())) return false;
         return true;
     }
