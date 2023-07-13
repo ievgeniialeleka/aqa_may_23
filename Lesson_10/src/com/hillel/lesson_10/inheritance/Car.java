@@ -15,13 +15,18 @@ public class Car extends Vehicle {
     }
 
     @Override
-    public void gas() {
-        System.out.println("Car is picking up the speed");
+    public String gas() {
+        return "Car is picking up the speed";
     }
 
     @Override
-    public void brake() {
-        System.out.println("Car is slowing down");
+    public String brake() {
+        return "Car is slowing down";
+    }
+
+    @Override
+    public String stop() {
+        return "Car has come to a complete stop";
     }
 
     public Car(int speed, double weight, String color, double price, String make, String model, int horsepower, String bodytype) {
@@ -69,6 +74,8 @@ public class Car extends Vehicle {
     public void setBodytype(String bodytype) {
         this.bodytype = bodytype;
     }
+
+
 
     @Override
     public String toString() {
