@@ -15,6 +15,6 @@ public class WrongPasswordException extends IOException {
     }
 
     public String toString() {
-        return this.getMessage();
+        return this.getMessage() + " You entered " + this.input;
     }
 }
