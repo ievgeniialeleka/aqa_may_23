@@ -1,5 +1,7 @@
 package com.hillel.lesson16;
 
+import java.util.Comparator;
+
 public class Product {
 
     private String name;
@@ -29,5 +31,12 @@ public class Product {
     @Override
     public String toString() {
         return "Product " + getName() + " costs " + getPrice();
+    }
+
+    public static class ComparatorByPrice implements Comparator<Product>{
+        @Override
+        public int compare(Product p1, Product p2) {
+            return Integer.compare(p1.price, p2.price);
+        }
     }
 }
