@@ -1,0 +1,15 @@
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd" >
+<suite name="Calculator testing suite">
+    <parameter name="int_param1" value="16"></parameter>
+    <parameter name="int_param2" value="2"></parameter>
+    <parameter name="int_param3" value="8"></parameter>
+    <test name="Simple Operations Test">
+        <classes>
+            <class name="com.hillel.lesson22.DivisionTestWithParameters">
+                <methods>
+                    <include name = "testGetQuotient"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>
