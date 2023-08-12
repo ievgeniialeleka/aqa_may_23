@@ -19,6 +19,7 @@ class ProductMarketTest {
     void setup() {
         productlist = new ArrayList<>();
         productlist.add(new Product("Bread", 4));
+        productlist.add(new Product("Bread", 6));
         productlist.add(new Product("Water", 2));
         productlist.add(new Product("Milk", 7));
         productlist.add(new Product("Eggs", 15));
@@ -35,37 +36,44 @@ class ProductMarketTest {
 
 
     @Test
-    void getProductNames() {
+    void test_getProductNames() {
         List<String> actual = productmarket.getProductNames();
         List<String> expected = List.of("Bread", "Water", "Milk", "Eggs", "Juice", "Coffee");
         assertEquals(expected, actual);
     }
 
     @Test
-    void getProductNamesSorted() {
+    void test_getProductPricesSorted() {
+        List<Integer> actual = productmarket.getProductPricesSorted();
+        List<Integer> expected = List.of(2, 4, 6, 7, 12, 15, 17);
+        assertEquals(expected, actual);
+    }
+
+    @Test
+    void test_getProductNamesSorted() {
         List<String> actual = productmarket.getProductNamesSorted();
         List<String> expected = List.of("Bread", "Coffee", "Eggs", "Juice", "Milk", "Water");
         assertEquals(expected, actual);
     }
 
     @Test
-    void getPricesMoreThan10() {
+    void test_getPricesMoreThan10() {
         List<Integer> actual = productmarket.getPricesMoreThan10();
         List<Integer> expected = List.of(15,12,17);
         assertEquals(expected, actual);
     }
 
     @Test
-    void getPricesLessThan5() {
+    void test_getPricesLessThan5() {
         List<Integer> actual = productmarket.getPricesLessThan5();
         List<Integer> expected = List.of(4,2);
         assertEquals(expected, actual);
     }
 
     @Test
-    void convertPricestoString() {
+    void test_convertPricestoString() {
         List<String> actual = productmarket.convertPricestoString();
-        List<String> expected = List.of("4","2","7","15","12","17");
+        List<String> expected = List.of("4","6","2","7","15","12","17");
         assertEquals(expected, actual);
     }
 }

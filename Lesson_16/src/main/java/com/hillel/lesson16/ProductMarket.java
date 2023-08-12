@@ -2,7 +2,9 @@ package com.hillel.lesson16;
 
 import java.util.ArrayList;
 import java.util.Collections;
+import java.util.Comparator;
 import java.util.List;
+import java.util.stream.Collectors;
 
 public class ProductMarket {
     private List<Product> productlist;
@@ -20,48 +22,43 @@ public class ProductMarket {
     }
 
     public List<String> getProductNames() {
-        List<String> productnames = new ArrayList<>();
-        for(Product p : productlist) {
-            productnames.add(p.getName());
-        }
-        return productnames;
-    }
+        return productlist.stream()
+                .map(Product::getName)
+                .distinct()
+                .collect(Collectors.toList());
+           }
 
     public List<String> getProductNamesSorted() {
-        List<String> productnames = new ArrayList<>();
-        for(Product p : productlist) {
-            productnames.add(p.getName());
-        }
-        Collections.sort(productnames);
-        return productnames;
+        productlist.sort(Comparator.comparing(Product::getName));
+        return productlist.stream()
+                .map(Product::getName)
+                .distinct()
+                .collect(Collectors.toList());
     }
-
+    public List<Integer> getProductPricesSorted() {
+        productlist.sort(Comparator.comparing(Product::getPrice));
+        return productlist.stream()
+                .map(Product::getPrice)
+                .distinct()
+                .collect(Collectors.toList());
+    }
     public List<Integer> getPricesMoreThan10() {
-        List<Integer> prices = new ArrayList<>();
-        for(Product p : productlist) {
-            if(p.getPrice() > 10) {
-                prices.add(p.getPrice());
-            }
-        }
-        return prices;
+        return productlist.stream()
+                .map(Product::getPrice)
+                .filter(p1 -> p1 > 10)
+                .collect(Collectors.toList());
     }
-
     public List<Integer> getPricesLessThan5() {
-        List<Integer> prices = new ArrayList<>();
-        for(Product p : productlist) {
-            if(p.getPrice() < 5) {
-                prices.add(p.getPrice());
-            }
-        }
-        return prices;
+        return productlist.stream()
+                .map(Product::getPrice)
+                .filter(p1 -> p1 < 5)
+                .collect(Collectors.toList());
     }
-
     public List<String> convertPricestoString() {
-        List<String> prices = new ArrayList<>();
-        for(Product p : productlist) {
-            prices.add(String.valueOf(p.getPrice()));
-        }
-        return prices;
+        return productlist.stream()
+                .map(Product::getPrice)
+                .map(String::valueOf)
+                .collect(Collectors.toList());
     }
 
 }
