@@ -1,0 +1,13 @@
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd" >
+<suite name="Regression suite">
+    <test name="Simple Operations Regression Test">
+       <groups>
+           <run>
+               <include name="regression"/>
+           </run>
+       </groups>
+        <classes>
+            <class name="com.hillel.lesson22.CalculatorTest"/>
+        </classes>
+    </test>
+</suite>
