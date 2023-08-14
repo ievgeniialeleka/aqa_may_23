@@ -1,0 +1,9 @@
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd" >
+<suite name="Calculator testing suite">
+    <test name="Simple Operations Test">
+        <classes>
+            <class name="com.hillel.lesson22.CalculatorTest"/>
+            <class name="com.hillel.lesson22.DivisionByZeroTest"/>
+        </classes>
+    </test>
+</suite>

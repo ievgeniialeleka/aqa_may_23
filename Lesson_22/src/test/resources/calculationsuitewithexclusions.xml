@@ -1,0 +1,12 @@
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd" >
+<suite name="Calculator testing suite with exclusions">
+    <test name="Simple Operations Test with exclusions">
+        <classes>
+        <class name="com.hillel.lesson22.CalculatorTest">
+            <methods>
+                <exclude name="testGetSum"/>
+            </methods>
+        </class>
+    </classes>
+    </test>
+</suite>
