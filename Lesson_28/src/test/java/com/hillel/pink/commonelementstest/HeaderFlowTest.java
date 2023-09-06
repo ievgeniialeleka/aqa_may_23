@@ -3,13 +3,16 @@ package com.hillel.pink.commonelementstest;
 import com.hillel.driverfactory.abstractions.DriverManager;
 import com.hillel.driverfactory.factory.DriverManagerFactory;
 import com.hillel.driverfactory.utils.BrowserName;
+import com.hillel.pink.abstractions.AbstractFlow;
 import com.hillel.pink.flows.commonflows.HeaderFlow;
 import com.hillel.pink.pages.commonelements.HeaderMenu;
 import com.hillel.pink.pages.creditcard.CreditCardPage;
 import com.hillel.pink.pages.shoppingbag.ShoppingBagPage;
 import com.hillel.pink.utils.PopUpUtils;
-import com.hillel.pink.utils.UrlChecks;
-import org.junit.jupiter.api.*;
+import org.junit.jupiter.api.AfterAll;
+import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.BeforeAll;
+import org.junit.jupiter.api.Test;
 import org.openqa.selenium.WebDriver;
 
 public class HeaderFlowTest {
@@ -37,14 +40,14 @@ public class HeaderFlowTest {
 
     @Test
     void testAccountIcon() {
-        if (!UrlChecks.doesCurrentUrlContain(driver, "pink")) headerFlow.returnToPinkHome();
+        headerFlow.navigateToPinkHome();
         headerFlow.navigateToAccountIcon();
-        Assertions.assertTrue(UrlChecks.doesCurrentUrlContain(driver, "account"));
+        Assertions.assertTrue(AbstractFlow.doesCurrentUrlContain(driver, "account"));
     }
 
     @Test
     void testShoppingBagIcon() {
-        if (!UrlChecks.doesCurrentUrlContain(driver, "pink")) headerFlow.returnToPinkHome();
+        headerFlow.navigateToPinkHome();
         headerFlow.navigateToShoppingBagIcon();
         Assertions.assertTrue(shoppingBagPage.getSHOPPING_BAG_TITLE().getText().toUpperCase().contains("SHOPPING BAG"));
         headerFlow.closeShoppingBag();
@@ -52,7 +55,7 @@ public class HeaderFlowTest {
 
     @Test
     void testCreditCardIcon() {
-        if (!UrlChecks.doesCurrentUrlContain(driver, "pink")) headerFlow.returnToPinkHome();
+        headerFlow.navigateToPinkHome();
         headerFlow.navigateToCreditCardIcon();
         Assertions.assertTrue(creditCardPage.getCREDIT_CARD_TITLE().getText().contains("Credit Card"));
     }

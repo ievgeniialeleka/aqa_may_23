@@ -1,13 +1,15 @@
 package com.hillel.pink.flows.login;
 
+import com.hillel.pink.abstractions.AbstractFlow;
 import com.hillel.pink.pages.login.LoginPage;
 import org.openqa.selenium.WebDriver;
 
-public class LoginFlow {
+public class LoginFlow extends AbstractFlow {
 
     private LoginPage loginPage;
 
     public LoginFlow(WebDriver driver) {
+        super(driver);
         this.loginPage = new LoginPage(driver);
     }
 

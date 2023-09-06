@@ -1,14 +1,16 @@
 package com.hillel.pink.flows.home;
 
+import com.hillel.pink.abstractions.AbstractFlow;
 import com.hillel.pink.pages.home.HomePage;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 
-public class HomeFlow {
+public class HomeFlow extends AbstractFlow {
 
     private HomePage homePage;
 
     public HomeFlow(WebDriver driver) {
+        super(driver);
         this.homePage = new HomePage(driver);
     }
     public void enterValueIntoSearchBox(String searchValue) {

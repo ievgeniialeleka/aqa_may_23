@@ -2,6 +2,7 @@ package com.hillel.pink.abstractions;
 
 import com.hillel.pink.flows.commonflows.HeaderFlow;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 
 public abstract class AbstractFlow {
 
@@ -13,5 +14,12 @@ public abstract class AbstractFlow {
 
     public HeaderFlow getHeaderFlow() {
         return headerFlow;
+    }
+
+    public static boolean isElementDisplayed(WebElement webElement) {
+        return webElement.isDisplayed();
+    }
+    public static boolean doesCurrentUrlContain(WebDriver driver, String text) {
+        return driver.getCurrentUrl().contains(text);
     }
 }

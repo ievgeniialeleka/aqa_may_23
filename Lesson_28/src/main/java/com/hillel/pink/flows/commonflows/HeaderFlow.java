@@ -18,5 +18,5 @@ public class HeaderFlow {
     public void navigateToShoppingBagIcon() { headerMenu.getSHOPPING_BAG_ICON().click(); }
     public void navigateToCreditCardIcon() {headerMenu.getCREDIT_CARD_ITEM().click(); }
     public void closeShoppingBag() { headerMenu.getCLOSE_SHOPPING_BAG_BUTTON().click(); }
-    public void returnToPinkHome() { headerMenu.getPINK_HOME_ICON().click(); }
+    public void navigateToPinkHome() { headerMenu.getPINK_HOME_ICON().click(); }
 }

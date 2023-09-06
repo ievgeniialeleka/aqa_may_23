@@ -2,7 +2,6 @@ package com.hillel.pink.registrationtest;
 
 import com.hillel.driverfactory.abstractions.DriverManager;
 import com.hillel.driverfactory.factory.DriverManagerFactory;
-import com.hillel.pink.flows.commonflows.HeaderFlow;
 import com.hillel.pink.flows.login.LoginFlow;
 import com.hillel.pink.flows.registration.RegistrationFlow;
 import com.hillel.pink.pages.commonelements.HeaderMenu;
@@ -25,7 +24,6 @@ public class RegistrationFlowTest {
     private static RegistrationPage registrationPage;
     private static RegistrationFlow registrationFlow;
     private static HeaderMenu headerMenu;
-    private static HeaderFlow headerFlow;
     private static Actions actions;
 
     @BeforeAll
@@ -36,7 +34,6 @@ public class RegistrationFlowTest {
         registrationPage = new RegistrationPage(driver);
         registrationFlow = new RegistrationFlow(driver);
         headerMenu = new HeaderMenu(driver);
-        headerFlow = new HeaderFlow(driver);
         actions = new Actions(driver);
         driver.manage().window().maximize();
         driver.navigate().to("https://www.victoriassecret.com/us/pink");
@@ -46,7 +43,7 @@ public class RegistrationFlowTest {
     @Test
     void testRegistrationInvalidFirstName() {
         actions.moveToElement(headerMenu.getACCOUNT_ICON()).build().perform();
-        headerFlow.navigateToRegistrationLink();
+        registrationFlow.getHeaderFlow().navigateToRegistrationLink();
         Assertions.assertEquals("Create an Account", registrationPage.getREGISTRATION_PAGE_TITLE().getText());
         registrationFlow.enterFirstName("123");
         registrationPage.getLAST_NAME_FIELD().click();
@@ -55,7 +52,7 @@ public class RegistrationFlowTest {
 
     @Test
     void testRegistrationInvalidLastName() {
-        headerFlow.navigateToAccountIcon();
+        registrationFlow.getHeaderFlow().navigateToAccountIcon();
         loginFlow.navigateToRegistrationPage();
         Assertions.assertEquals("Create an Account", registrationPage.getREGISTRATION_PAGE_TITLE().getText());
         registrationFlow.enterFirstName("Test");
@@ -66,7 +63,7 @@ public class RegistrationFlowTest {
 
     @Test
     void testRegistrationInvalidEmail() {
-        headerFlow.navigateToAccountIcon();
+        loginFlow.getHeaderFlow().navigateToAccountIcon();
         loginFlow.navigateToRegistrationPage();
         Assertions.assertEquals("Create an Account", registrationPage.getREGISTRATION_PAGE_TITLE().getText());
         registrationFlow.enterFirstName("Test");

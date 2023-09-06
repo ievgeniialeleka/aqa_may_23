@@ -1,13 +1,15 @@
 package com.hillel.pink.flows.registration;
 
+import com.hillel.pink.abstractions.AbstractFlow;
 import com.hillel.pink.pages.registration.RegistrationPage;
 import org.openqa.selenium.WebDriver;
 
-public class RegistrationFlow {
+public class RegistrationFlow extends AbstractFlow {
 
     private RegistrationPage registrationPage;
 
     public RegistrationFlow(WebDriver driver) {
+        super(driver);
         this.registrationPage = new RegistrationPage(driver);
     }
 
